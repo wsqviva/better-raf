@@ -1,0 +1,16 @@
+{
+  "name": "raf",
+  "version": "0.0.1",
+  "description": "raf",
+  "main": "index.js",
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "raf"
+  ],
+  "author": "wsqviva",
+  "license": "MIT"
+}
