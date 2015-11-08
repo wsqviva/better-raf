@@ -1,6 +1,6 @@
 'use strict';
 
-var raf = window.requestAnimationFram;
+var raf = window.requestAnimationFrame;
 var caf = window.cancelAnimationFrame;
 var vendors = ['webkit', 'moz', 'o', 'ms'];
 var vendor;
