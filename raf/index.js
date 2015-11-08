@@ -54,7 +54,7 @@ function delayCallback(time) {
   delay = self.frameLength - (time - lastTickTime);
 
   if (delay <= 0) {
-    self.delaying = false;
+    self._delaying = false;
     self.lastTickTime = time;
 
     _callbacks = self._callbacks;
