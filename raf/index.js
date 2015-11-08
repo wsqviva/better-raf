@@ -13,20 +13,24 @@ var nativeCAF = nativeAF && nativeAF.caf;
 // 默认帧数60
 var DEFAULT_FRAMERATE = 60;
 
+/**
+ *
+ * @params {Number || Object}  eg: { frameRate: 30 }
+ */
 function AnimationFrame(options) {
   if (!(this instanceof AnimationFrame)) {
     return new AnimationFrame(options)
   }
   // 用户定义的帧速率
-  var frameRate = DEFAULT_FRAMERATE;
-
-  options || (options = {});
+  var frameRate;
 
   if (typeof options == 'number') {
     frameRate = options;
-  } else if (typeof options == 'object') {
+  } else if (options) {
     frameRate = options.frameRate;
   }
+
+  frameRate || ( frameRate = DEFAULT_FRAMERATE );
 
   this.frameRate = frameRate;
   this.frameLength = 1000 / frameRate;
