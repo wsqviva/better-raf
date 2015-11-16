@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * 返回页面打开至调用此函数的毫秒，小数10位
+ * 是否支持window.performance
  *
  * @returns {undefined | Object} 
  */
@@ -19,8 +19,7 @@ function dateNow() {
 };
 
 /**
- * now
- * 默认会使用performance API 
+ * now默认会使用performance API 
  * 
  * @params {Object} options 如不用performance{ performance: false }
  *
@@ -28,6 +27,7 @@ function dateNow() {
  */
 function now(notusePersormance) {
   if (window.performance && surpportPerformance && !notusePersormance) {
+    // 页面打开到执行到这里的时间，精度较高
     return window.performance.now() + window.performance.timing.navigationStart;
   }
   return dateNow();
