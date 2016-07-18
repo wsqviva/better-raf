@@ -4,9 +4,12 @@
   "description": "raf",
   "main": "index.js",
   "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "keywords": [
     "raf"
