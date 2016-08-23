@@ -1,8 +1,3 @@
-// Thanks To
-// --------------------------------------------
-// https://github.com/chrisdickinson/raf
-// https://github.com/kof/animation-frame
-
 // TODO:
 // error handle
 'use strict';
@@ -169,12 +164,5 @@ AnimationFrame.prototype.cancelAnimationFrame = function(id) {
   delete this._currentKeymaps[id];
   --this.keymapsSize;
 };
-
-
-// var raf = new AnimationFrame({
-//   frameRate: 10,
-//   useNative: false
-// });
-
 
 module.exports = AnimationFrame;
