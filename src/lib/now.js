@@ -1,13 +1,6 @@
 'use strict';
 
-/**
- * 是否支持window.performance
- *
- * @returns {undefined | Object} 
- */
-function surpportPerformance() {
-  return window.performance;
-};
+var start = dateNow();
 
 /**
  * 返回1970.1.1至调用此函数的毫秒
@@ -20,17 +13,19 @@ function dateNow() {
 
 /**
  * now默认会使用performance API 
- * 
- * @params {Object} options 如不用performance{ performance: false }
+ * 这里时间是总的时间
+ * requestAnimation回调的时间是window.performance.now()
  *
  * @returns {Number} 返回time in ms
  */
-function now(notusePersormance) {
-  if (window.performance && surpportPerformance && !notusePersormance) {
-    // 页面打开到执行到这里的时间，精度较高
-    return window.performance.now() + window.performance.timing.navigationStart;
+function nowFromStart() {
+  if (window.performance) {
+    // window.performance.now() 从页面打开(window.performance.timing.navigationStart)到执行到这里(dateNow)的时间
+    // return window.performance.timing.navigationStart + window.performance.now();
+    return window.performance.now()
   }
-  return dateNow();
+  
+  return dateNow() - start;
 };
 
-module.exports = now;
+module.exports = nowFromStart;

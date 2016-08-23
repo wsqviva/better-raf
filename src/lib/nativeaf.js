@@ -1,26 +1,27 @@
 'use strict';
 
-var raf = window.requestAnimationFrame;
-var caf = window.cancelAnimationFrame;
-var vendors = ['webkit', 'moz', 'o', 'ms'];
-var vendor;
-var i;
+var raf;
+var caf;
 
-if (!raf) {
+(function(win) {
+  raf = win.requestAnimationFrame;
+  caf = win.cancelAnimationFrame;
 
-  //vendorName = _.find(vendors, function(vendor) {
-  //  return typeof window[vendor + 'RequestAnimationFrame'] == 'function';
-  //});
-
-  for(i = 0; i < vendors.length; i++) {
-    vendor = window[vendors[i] + 'RequestAnimationFrame'];
-    if (vendor) {
-      raf = vendor;
-      caf = window[vendors[i] + 'CancelAnimationFrame'];
-      break;
+  var vendors = ['webkit', 'moz', 'o', 'ms'];
+  var vendor;
+  var i;
+  
+  if (!raf) {
+    for(i = 0; i < vendors.length; i++) {
+      vendor = win[vendors[i] + 'RequestAnimationFrame'];
+      if (vendor) {
+        raf = vendor;
+        caf = win[vendors[i] + 'CancelAnimationFrame'];
+        break;
+      }
     }
   }
-}
+})(window);
 
 module.exports.raf = raf;
 module.exports.caf = caf;

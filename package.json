@@ -1,8 +1,8 @@
 {
   "name": "raf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "raf",
-  "main": "index.js",
+  "main": "dist/raf.js",
   "devDependencies": {
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
