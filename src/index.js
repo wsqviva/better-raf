@@ -120,9 +120,9 @@ function doCallback() {
  * @returns {Number} 返回timer id
  */
 AnimationFrame.prototype.requestAnimationFrame = function(callback) {
-  // if (!this._isCustomFrameRate) {
-  //   return nativeRAF(callback);
-  // }
+  if (!this._isCustomFrameRate) {
+    return nativeRAF(callback);
+  }
 
   if (typeof callback !== 'function') throw new TypeError('arguments should be a callback function');
 
