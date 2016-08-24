@@ -23,6 +23,18 @@ switch(process.env.npm_lifecycle_event) {
           'process.env': {
             NODE_ENV: 'production'
           }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+          beautify: false,
+          comments: false,
+          compress: {
+            warnings: false,
+            drop_console: true
+          },
+          mangle: {
+            except: ['webpackJsonp'],
+            screw_ie8: true
+          }
         })
       ],
       devtool: 'source-map'
