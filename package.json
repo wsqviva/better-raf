@@ -1,7 +1,7 @@
 {
-  "name": "raf",
+  "name": "better-raf",
   "version": "0.0.1",
-  "description": "raf",
+  "description": "better raf",
   "main": "dist/raf.js",
   "devDependencies": {
     "webpack": "^1.13.1",
