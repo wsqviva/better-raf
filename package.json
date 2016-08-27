@@ -12,7 +12,7 @@
     "start": "webpack-dev-server"
   },
   "keywords": [
-    "raf"
+    "raf", "better-raf", "requestAnimationFrame"
   ],
   "author": "wsqviva",
   "license": "MIT"
